@@ -4,6 +4,7 @@ dnf install nodejs -y
 cp Backend Service /etc/systemd/system/backend.service
 
 useradd expense
+rm -f /app
 mkdir /app
 curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip
 cd /app
