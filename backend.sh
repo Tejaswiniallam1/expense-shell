@@ -8,6 +8,7 @@ useradd expense
 rm -rf /app
 mkdir /app
 curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip
+pwd
 cd /app
 unzip /tmp/backend.zip
 npm install
