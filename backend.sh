@@ -12,7 +12,7 @@ pwd
 cd /app
 unzip /tmp/backend.zip
 npm install
-
+## its interesting
 systemctl daemon-reload
 systemctl enable backend
 systemctl start backend
