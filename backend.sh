@@ -39,3 +39,4 @@ dnf install mysql -y &>>/tmp/expense.log
 
 echo -e "\e[35m load schema\e[0m"
 mysql -h mysql-dev.tejudevops.online -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>/tmp/expense.log
+## >/dev/null -- this command used to not store the data into the disk.
