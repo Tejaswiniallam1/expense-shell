@@ -1,3 +1,5 @@
+MYSQL_PASSWORD=$1
+
 source common.sh
 
 Head(){

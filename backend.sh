@@ -1,3 +1,5 @@
+MYSQL_PASSWORD=$1
+
 source common.sh
 
 Head  "Disable nodejs existing version"
@@ -30,8 +32,10 @@ echo $?
 
 Head  "download Application content"
 curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip &>>log_file
-cd /app &>>log_file
 echo $?
+
+cd /app
+
 
 Head  "extracting the application content"
 unzip /tmp/backend.zip &>>log_file
