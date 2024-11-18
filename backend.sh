@@ -1,5 +1,5 @@
 MYSQL_PASSWORD=$1
-
+Component=backend
 source common.sh
 
 Head  "Disable nodejs existing version"
@@ -22,24 +22,8 @@ Head  "Add application user"
 useradd expense &>>log_file
 echo $?
 
-Head  "remove existing App content"
-rm -rf /app &>>log_file
-echo $?
+App_Prereq /app
 
-Head  "create application directory"
-mkdir /app &>>log_file
-echo $?
-
-Head  "download Application content"
-curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip &>>log_file
-echo $?
-
-cd /app
-
-
-Head  "extracting the application content"
-unzip /tmp/backend.zip &>>log_file
-echo $?
 
 Head  "downloading application dependencies"
 npm install &>>log_file

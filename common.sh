@@ -15,12 +15,12 @@ App_Prereq()
   echo $?
 
   Head  "download Application content"
-  curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip &>>log_file
+  curl -o /tmp/${component}.zip https://expense-artifacts.s3.amazonaws.com/${component}.zip &>>log_file
   echo $?
 
    cd /$1
 
   Head  "extracting the application content"
-  unzip /tmp/backend.zip &>>log_file
+  unzip /tmp/${component}.zip &>>log_file
   echo $?
 }
