@@ -1,7 +1,7 @@
 log_file=/tmp/expense.log
 MYSQL_PASSWORD=$1
 Head(){
-  echo -e "\e[$1\e[0m"
+  echo -e "\e[35m$1\e[0m"
 }
 Head  "Disable nodejs existing version"
 dnf module disable nodejs -y &>>log_file
