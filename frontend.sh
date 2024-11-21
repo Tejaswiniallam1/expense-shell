@@ -8,15 +8,15 @@ Head(){
 }
 Head "Install Nginx Server"
 dnf install nginx -y
-echo $?
+Stat $?
 
 Head "Copy expense config file"
 cp expense.conf /etc/nginx/default.d/expense.conf
-echo $?
+Stat $?
 
 App_Prereq "/user/share/nginx/html"
 
 Head "Start Nginx Service"
 systemctl enable nginx
 systemctl restart nginx
-echo $?
+Stat $?

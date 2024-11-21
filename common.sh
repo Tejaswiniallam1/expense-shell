@@ -8,21 +8,21 @@ App_Prereq()
   DIR=$1
   Head  "remove existing App content"
   rm -rf $1  &>>log_file
-  echo $?
+ Stat $?
 
   Head  "create application directory"
   mkdir $1  &>>log_file
-  echo $?
+  Stat $?
 
   Head  "download Application content"
   curl -o /tmp/${component}.zip https://expense-artifacts.s3.amazonaws.com/${component}.zip &>>log_file
-  echo $?
+  Stat $?
 
    cd /$1
 
   Head  "extracting the application content"
   unzip /tmp/${component}.zip &>>log_file
-  echo $?
+  Stat $?
 }
 stat()
 {
