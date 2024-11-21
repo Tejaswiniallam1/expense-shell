@@ -24,3 +24,12 @@ App_Prereq()
   unzip /tmp/${component}.zip &>>log_file
   echo $?
 }
+stat()
+{
+if [ $? -eq 0 ]; then
+  echo success
+else
+  echo Failure
+  exit 1
+fi
+}
